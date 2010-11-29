@@ -1,0 +1,176 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html id='html'>
+    <head id='head'>
+        <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+        <title>MooTableCollapse</title>
+        <style type='text/css'>
+             * {
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                line-height: 1.225em;
+                position: relative;
+            }
+            
+			caption {
+				border: 1px solid #d3d3d3;
+				font-size: 0.8em;
+                font-variant: small-caps;
+                line-height: 1em;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+			}
+			
+            table {
+                border: 1px solid #d3d3d3;
+                border-collapse: collapse;
+				caption-side: bottom;
+                margin: 0;
+                padding: 0;
+				table-layout: fixed;
+            }
+            
+            td {
+                border: 1px solid #d3d3d3;
+				empty-cells: hide;
+                line-height: 1.225em;
+                margin: 0;
+                opacity: 1;
+                padding: 0;
+                visibility: visible;
+            }
+            
+            td.collapsed {
+                line-height: 0;
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            td.expanded {
+                line-height: 1.225em;
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            tfoot {
+                font-size: 0.8em;
+                font-variant: small-caps;
+                line-height: 1em;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+            }
+            
+            th {
+                background-color: #000;
+                border: 1px solid #fff;
+                color: #fff;
+                margin: 0;
+                padding: 0;
+            }
+            
+			thead {
+				text-align: left;
+			}
+			
+            tr {
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+        <script type='text/javascript' src='./mootools-1.2.1-core-yc.js'>
+        </script>
+        <script type='text/javascript' src='./mootools-1.2-more-yc.js'>
+        </script>
+        <script type='text/javascript' src='./mootablecollapse.js'>
+        </script>
+        <script type='text/javascript'>
+            function init(){
+                //var mtcTest = new MooTableCollapse($('test'), {collapsed:true});
+				$('test').getElements('tbody tr').each(function(item){
+					item.getElements('td').setStyles({
+						//display: 'none',
+						visibility: 'hidden',
+						//'empty-cells': 'hide',
+						'line-height': '0'
+					});
+					item.setStyle('display', 'none');
+				});
+            }
+            
+            window.addEvent('domready', init);
+        </script>
+    </head>
+    <body id='body'>
+        <table summary='test table' id='test' style='width: 250px;'>
+			<caption>Expand</caption>
+            <thead>
+                <tr>
+                    <th>
+                        This
+                    </th>
+                    <th>
+                        Is
+                    </th>
+                    <th>
+                        The
+                    </th>
+                    <th>
+                        Head
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        One
+                    </td>
+                    <td>
+                        Two
+                    </td>
+                    <td>
+                        Three
+                    </td>
+                    <td>
+                        Four
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Five
+                    </td>
+                    <td>
+                        Six
+                    </td>
+                    <td>
+                        Seven
+                    </td>
+                    <td>
+                        Eight
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Nine
+                    </td>
+                    <td>
+                        Ten
+                    </td>
+                    <td>
+                        Eleven
+                    </td>
+                    <td>
+                        Twelve
+                    </td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan='4'>
+                        Expand
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+</html>
