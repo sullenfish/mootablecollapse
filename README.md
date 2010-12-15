@@ -3,6 +3,7 @@ mootablecollapse
 Collapsible tables using [MooTools](http://mootools.net).
 
 What you need:
+
 * Content (HTML/XHTML): Something with a <table>!
 * Behavior (JavaScript):
     * [MooTools Core](http://mootools.net/download *MooTools Download Page*)
