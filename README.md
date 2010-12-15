@@ -3,7 +3,8 @@ mootablecollapse
 Collapsible tables using [MooTools](http://mootools.net).
 
 What you need:
-* Content (HTML/XHTML): Something with a <table>!
+
+* Content (HTML/XHTML): Something with a &lt;table&gt; element!
 * Behavior (JavaScript):
     * [MooTools Core](http://mootools.net/download *MooTools Download Page*)
     * mootablecollapse.js
@@ -14,4 +15,4 @@ What you need:
 ...or pull it all in using [RequireJS](http://requirejs.org).  We can do an amazing asynchronous kabuki dance of RequireJS, MooTools Core, MooTools More/Utilities/Assets, mootablecollapse.js and mootablecollapse.css (or Less.js and mootablecollapse.less).
 
 - - - - - - - - - -
-(c)2009, 2010 Frederick J. Ostrander
+&copy;2009, 2010 Frederick J. Ostrander
