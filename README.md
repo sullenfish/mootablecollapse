@@ -6,7 +6,7 @@ What you need:
 
 * Content (HTML/XHTML): Something with a &lt;table&gt; element!
 * Behavior (JavaScript):
-    * [MooTools Core](http://mootools.net/download *MooTools Download Page*)
+    * [MooTools Core](http://mootools.net/download "MooTools Download Page")
     * mootablecollapse.js
 * Styling (CSS/LESS): Pick one!
     * mootablecollapse.css
