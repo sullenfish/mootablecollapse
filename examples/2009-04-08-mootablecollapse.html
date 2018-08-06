@@ -4,28 +4,34 @@
         <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
         <title>MooTableCollapse</title>
         <style type='text/css'>
-			* {
+             * {
                 font-family: Arial, Helvetica, sans-serif;
                 font-size: 1em;
                 line-height: 1.225em;
                 position: relative;
             }
             
-			html, body {
-				font-size: 1em;
-				line-height: 1.225em;
+			caption {
+				border: 1px solid #d3d3d3;
+				font-size: 0.8em;
+                font-variant: small-caps;
+                line-height: 1em;
+                margin: 0;
+                padding: 0;
+                text-align: center;
 			}
 			
             table {
                 border: 1px solid #d3d3d3;
                 border-collapse: collapse;
+				caption-side: bottom;
                 margin: 0;
                 padding: 0;
 				table-layout: fixed;
             }
             
             td {
-                border: 0.063em solid #d3d3d3;
+                border: 1px solid #d3d3d3;
 				empty-cells: hide;
                 line-height: 1.225em;
                 margin: 0;
@@ -35,33 +41,26 @@
             }
             
             td.collapsed {
-            	border-bottom-width: 0;
-            	border-top-width: 0;
-            	height: 0;
                 line-height: 0;
                 opacity: 0;
                 visibility: hidden;
             }
             
             td.expanded {
-            	border-bottom-width: 0.063em;
-				border-top-width: 0.063em;
-            	height: 1.225em;
                 line-height: 1.225em;
                 opacity: 1;
                 visibility: visible;
             }
             
             tfoot {
-            	cursor: pointer;
                 font-size: 0.8em;
                 font-variant: small-caps;
                 line-height: 1em;
                 margin: 0;
                 padding: 0;
-                text-align: right;
+                text-align: center;
             }
-			
+            
             th {
                 background-color: #000;
                 border: 1px solid #fff;
@@ -79,33 +78,32 @@
                 padding: 0;
             }
         </style>
-        <script type='text/javascript' src='./mootools-1.2.1-core-yc.js'>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mootools/1.6.0/mootools-core.min.js'>
         </script>
-        <script type='text/javascript' src='./mootools-1.2-more-yc.js'>
+        <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mootools-more/1.6.0/mootools-more-compressed.js'>
         </script>
-        <script type='text/javascript' src='./mootablecollapse.js'>
+        <script type='text/javascript' src='https://rawgit.com/sullenfish/mootablecollapse/develop/mootablecollapse.js'>
         </script>
         <script type='text/javascript'>
             function init(){
-				//$('clickme').addEvent('click', function(){
-	                var mtcTest = new MooTableCollapse($('test'), {
-						collapsed: true,
-						'exposed-rows': 1,
-						'footer-text': {
-							collapsed: 'More...',
-							expanded: '...Less'
-						}
-					});					
-				//});
+                //var mtcTest = new MooTableCollapse($('test'), {collapsed:true});
+				$('test').getElements('tbody tr').each(function(item){
+					item.getElements('td').setStyles({
+						//display: 'none',
+						visibility: 'hidden',
+						//'empty-cells': 'hide',
+						'line-height': '0'
+					});
+					item.setStyle('display', 'none');
+				});
             }
             
             window.addEvent('domready', init);
         </script>
     </head>
     <body id='body'>
-    	<!--<button id='clickme'>Click to Enhance Table</button>-->
-		<br/><br/>
-        <table summary='random table' id='test' style='width: 250px;'>
+        <table summary='test table' id='test' style='width: 250px;'>
+			<caption>Expand</caption>
             <thead>
                 <tr>
                     <th>
@@ -169,7 +167,7 @@
             <tfoot>
                 <tr>
                     <td colspan='4'>
-                        &nbsp;
+                        Expand
                     </td>
                 </tr>
             </tfoot>
